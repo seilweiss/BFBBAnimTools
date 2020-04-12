@@ -276,6 +276,8 @@ utility BFBBAnimTools "BFBB Anim Tools"
 		
 		local nodes = GetDummyNodes()
 		
+		local nodeCount = amin asset.boneCount nodes.count
+		
 		for node in nodes do
 			deleteKeys node.controller #allKeys
 		
@@ -283,7 +285,7 @@ utility BFBBAnimTools "BFBB Anim Tools"
 		(
 			for i = 1 to asset.times.count - 1 do
 			(				
-				for j = 1 to asset.boneCount do
+				for j = 1 to nodeCount do
 				(
 					local index = asset.offsets[i][j] + 1
 					local key = asset.keys[index]
